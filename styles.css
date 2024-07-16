@@ -29,7 +29,7 @@ header {
     user-select: none;
 }
 
-.navigation a {
+.navigation a{
     position: relative;
     font-size: 1.1em;
     color: white;
@@ -57,6 +57,29 @@ header {
     transform-origin: left;
 
 }
+
+.navigation .btnSignup-popup{
+    width: 130px;
+    height: 50px;
+    background: #bb3e03;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnSignup-popup:hover{
+    background: #fff;
+    color: #003049;
+    border: 2px solid #bb3e03;
+
+}
+
 
 .navigation .btnLogin-popup{
     width: 130px;
@@ -103,18 +126,20 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* overflow: hidden; */
-    transition: height .2s ease;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
 }
 
 .wrapper.active{
     height: 520px;
 }
 
-.wrapper .form-box.login{
-    transition: transform 1.18s ease;
-    transform: translateX(0);
-}
+
 
 .wrapper.active .form-box.login{
     transition: none;
@@ -125,6 +150,28 @@ body{
     width: 100%;
     padding: 40px;
 }
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+    /* display: none; */
+
+}
+
+.wrapper .form-box.register{
+    position:absolute;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0px);
+}
+
+
+
+
+
 
 .input-box{
     position: relative;
@@ -245,18 +292,6 @@ body{
     z-index: 1;
 
 }
-
-.wrapper .form-box.login{
-    /* display: none; */
-}
-
-.wrapper .form-box.register{
-    position:absolute;
-    transform: translateX(400px);
-}
-
-
-
 
 
 
