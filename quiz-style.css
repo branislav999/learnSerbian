@@ -209,14 +209,18 @@ main.active{
     transition: .5s;
 }
 
-.popup-info .btn-group .info-btn:nth-child(1){
+.popup-info .btn-group .info-btn:nth-child(3){
     background-color: transparent;
     color: rgb(161, 17, 41);
 }
 
-.popup-info .btn-group .info-btn:nth-child(1):hover{
+.popup-info .btn-group .info-btn:nth-child(3):hover{
     background: rgb(161, 17, 41);
     color: #fff;
+}
+
+.popup-info .btn-group .info-btn:nth-child(1):hover{
+    background: rgba(46, 88, 110, 0.85);
 }
 
 .popup-info .btn-group .info-btn:nth-child(2):hover{
@@ -225,10 +229,11 @@ main.active{
 
 .quiz-section{
     position: relative;
-    left: -50%;
-    /* left: 0; */
+    /* left: -50%; */
+    left: 0;
     width: 100%;
-    background: rgb(161, 17, 41);
+    /* background: rgb(161, 17, 41); */
+    background: #ca6702;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -245,8 +250,8 @@ main.active{
 .quiz-section .quiz-box{
     position: relative;
     width: 500px;
-    background: transparent;
-    border: 2px solid rgb(255, 255, 255);
+    background: #3c6e71;
+    border: 2px solid #fdf0d5;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -267,8 +272,9 @@ main.active{
 .quiz-box h1{
     font-size: 32px;
     text-align: center;
-    background: linear-gradient(45deg, transparent, rgb(255, 255, 255), transparent);
+    /* background: linear-gradient(45deg, transparent, rgb(255, 255, 255), transparent); */
     border-radius: 6px;
+    color: #fdf0d5;
 }
 
 .quiz-box .quiz-header{
@@ -276,8 +282,13 @@ main.active{
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 2px solid aqua;
+    border-bottom: 2px solid #fdf0d5;
     margin-bottom: 30px;
+    
+}
+
+.quiz-header span:nth-child(1){
+    color: #fdf0d5;
 }
 
 .quiz-header span{
@@ -286,7 +297,7 @@ main.active{
 }
 
 .quiz-header .header-score{
-    background: pink;
+    background: #fdf0d5;
     border-radius: 3px;
     padding: 7px;
 }
@@ -294,53 +305,104 @@ main.active{
 .quiz-box .question-text{
     font-size: 24px;
     font-weight: 600;
+    color: #fdf0d5;
 }
 
 .option-list .option{
     width: 100%;
     padding: 12px;
-    background: transparent;
-    border: 2px solid black;
+    background: #fdf0d5;
+    border: 2px solid #ca6702;
     border-radius: 4px;
     margin: 15px 0;
     cursor: pointer;
     transition: .3s;
+    color: #003049;
 }
 
 .option-list .option:hover{
-    background: rgba(255, 255, 255, .1);
-    border-color:  rgba(255, 255, 255, .1);
+    background: #fab46d;
+    border-color:  #14213d;
 }
+
+.option-list .option.correct{
+    border: 2px solid rgb(31, 182, 31);
+    background-color: rgb(104, 238, 104);
+}
+
+.option-list .option.incorrect{
+    border: 2px solid rgb(226, 22, 22);
+    background-color: rgb(245, 97, 97);
+}
+
+.option-list .option.disabled{
+    pointer-events: none;
+}
+
+
+
+
 
 .quiz-box .quiz-footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 2px solid black;
+    border-top: 2px solid #fdf0d5;
     padding-top: 25px;
 }
 
 .quiz-footer .question-total{
     font-size: 16px;
     font-weight: 600;
+    color: #fdf0d5;
 }
 
 .quiz-footer .next-btn{
     width: 100px;
     height: 45px;
-    background: rgba(255, 255, 255, .1);
-    border: 2px solid rgba(255, 255, 255, .1);
+    background: gray;
+    border: 2px solid gray;
     outline: none;
     border-radius: 6px;
     font-size: 16px;
-    color: rgba(255, 255, 255, .3);
+    color: #d8e8f0;
     font-weight: 600;
+    /* transition: 2s ease; */
+    /* cursor: pointer; */
+}
+
+.quiz-footer .next-btn.active{
+    pointer-events: auto;
+    background: #fdf0d5;
+    border: 2px solid #ca6702;
+    color: #003049;
     cursor: pointer;
+
 }
 
-.quiz-footer .next-btn:hover{
-    background: pink;
-    border-color: pink;
+.quiz-footer .next-btn.active:hover{
+    background: #ca6702;
+    border-color: #14213d;
+    color: #fdf0d5;
 }
 
 
+.quiz-section .result-box{
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: transparent;
+    border: 2px solid aqua;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.result-box h2{
+    font-size: 52px;
+}
