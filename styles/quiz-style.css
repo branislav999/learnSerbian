@@ -70,7 +70,7 @@ body{
 
 main{
     min-height: 100vh;
-    background: url('serbia1.jpg') no-repeat;
+    background: url('../images/serbia1.jpg') no-repeat;
     background-size: cover;
     pointer-events: auto;
     background-position: center;    
@@ -229,8 +229,7 @@ main.active{
 
 .quiz-section{
     position: relative;
-    /* left: -50%; */
-    left: 0;
+    left: -50%;
     width: 100%;
     /* background: rgb(161, 17, 41); */
     background: #ca6702;
@@ -259,6 +258,8 @@ main.active{
     opacity: 0;
     pointer-events: none;
     transform: scale(.9);
+    transition: .3s ease;
+    transition-delay: 0s;    
 }
 
 .quiz-section .quiz-box.active{
@@ -391,18 +392,108 @@ main.active{
     position: absolute;
     top: 50%; 
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(.9);
     width: 500px;
-    background: transparent;
-    border: 2px solid aqua;
+    background: #3c6e71;
+    border: 2px solid #fdf0d5;
+    color: #fdf0d5;
     border-radius: 6px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.quiz-section .result-box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(.9);
 
 }
 
 .result-box h2{
     font-size: 52px;
 }
+
+.result-box .percentage-container{
+    width: 300px;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+
+.percentage-container .circular-progress{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percentage-container .circular-progress::before{
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: #14213d;
+    border-radius: 50%;
+}
+
+
+.circular-progress .progress-value{
+    position: relative;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.percentage-container .score-text{
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.result-box .buttons{
+    display: flex;
+}
+
+.buttons button{
+    width: 130px;
+    height: 47px;
+    background: #fdf0d5;
+    border: 2px solid #14213d;
+    color: #14213d;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 20px 20px;
+    cursor: pointer;
+}
+
+
+.buttons button:nth-child(1):hover{
+    background: #d61f1faf;
+    color: #fdf0d5;
+
+}
+
+.buttons button:nth-child(2){
+    background: #14213d;
+    color: #fdf0d5;
+    border: 2px solid #fdf0d5;   
+}
+
+.buttons button:nth-child(2):hover{
+    background: #d61f1faf;
+    color: #fdf0d5;
+
+}
+
+
+

@@ -107,7 +107,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('grad.jpeg') no-repeat;
+    background: url('../images/grad.jpeg') no-repeat;
     background-size: cover;
     background-position: center;   
     /* padding-top: 1100px; */
